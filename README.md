@@ -48,7 +48,7 @@ Add `release.keystore` and `release.properties` for releasing as production
 ### Architecture
 
 This project is built in [MVVM](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel) architecture with partially [Android Jetpack](https://developer.android.com/jetpack) integration. 
-We all so apply Repository pattern, DAO pattern for the persistence layer and Dependency Injection for project's object injection.
+We also apply Repository pattern, DAO pattern for the persistence layer and Dependency Injection for project's object injection.
 
 There are 3 main layers in this structure:
 - Model: Data processor with all data logic inside, located in `/data` folder
@@ -56,7 +56,7 @@ There are 3 main layers in this structure:
 - ViewModel: Bridge between View and Model, process view logic.
 
 #### Model
-Using `Repository` to mix, process data before expose to VM. 
+Using `Repository` to mix, process data before exposing to VM. 
 Model does NOT hold any instances of View or ViewModel that make it as lowest level in the architecture.
 
 Below is diagram that describe how data is processed in Model.
@@ -78,7 +78,7 @@ Control how the view is displayed and handle user interaction.
 ViewModel bridge between Model and View, is responsible doing some view logic before sending notification to the View.
 
 - ViewModel holds instance of Model, send command directly do Model and listen notification from that.
-- ViewModel does NOT hold View instance. It just provide the channels to View that View can listen on data change from ViewModel.
+- ViewModel does NOT hold View instance. It just provides the channels to View that View can listen on data change from ViewModel.
 - ViewModel does some data logic like transforming pure data from Model to ViewModel (a kind of view-related stuff) that help to display the UI then expose it to View.
 - ViewModel holds some specific logic/data processor components.
 
